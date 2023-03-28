@@ -95,7 +95,6 @@ Function CreateGroup {
         }
         
         $ownerinfo = get-random $userlist
-        $Description = "User Group Created by Badblood github.com/davidprowe/badblood"
         
         <#
         ================================
@@ -127,7 +126,7 @@ Function CreateGroup {
             $i++
         }while($null -ne $checkAcct)   
 
-        try{New-ADGroup -Server $setdc -Description $Description -Name $GroupNameFull -Path $ouLocation -GroupCategory Security -GroupScope Global -ManagedBy $ownerinfo.distinguishedname}
+        try{New-ADGroup -Server $setdc -Name $GroupNameFull -Path $ouLocation -GroupCategory Security -GroupScope Global -ManagedBy $ownerinfo.distinguishedname}
         catch{}
         
 }
